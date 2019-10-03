@@ -1,0 +1,26 @@
+<annotation>
+	<folder>fried_chicken</folder>
+	<filename>fried_chicken_11.jpg</filename>
+	<path>/Users/AndyWu/Downloads/fried_chicken/fried_chicken_11.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1000</width>
+		<height>667</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fried_chicken</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>162</xmin>
+			<ymin>169</ymin>
+			<xmax>488</xmax>
+			<ymax>425</ymax>
+		</bndbox>
+	</object>
+</annotation>

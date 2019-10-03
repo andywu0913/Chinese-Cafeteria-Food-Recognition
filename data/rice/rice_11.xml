@@ -1,0 +1,26 @@
+<annotation>
+	<folder>rice</folder>
+	<filename>rice_11.jpg</filename>
+	<path>/Users/winnie/Desktop/Bento/rice/rice_11.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>293</width>
+		<height>172</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>rice</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>116</xmin>
+			<ymin>85</ymin>
+			<xmax>207</xmax>
+			<ymax>150</ymax>
+		</bndbox>
+	</object>
+</annotation>
