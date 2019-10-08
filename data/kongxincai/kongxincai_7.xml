@@ -1,0 +1,26 @@
+<annotation>
+	<folder>kongxincai</folder>
+	<filename>kongxincai_7.jpg</filename>
+	<path>/Users/winnie/Desktop/Bento/kongxincai/kongxincai_7.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>kongxincai</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>278</xmin>
+			<ymin>140</ymin>
+			<xmax>639</xmax>
+			<ymax>435</ymax>
+		</bndbox>
+	</object>
+</annotation>
