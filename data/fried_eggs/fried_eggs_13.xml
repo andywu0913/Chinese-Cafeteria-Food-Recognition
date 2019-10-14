@@ -1,0 +1,26 @@
+<annotation>
+	<folder>fried_eggs</folder>
+	<filename>fried_eggs_13.jpeg</filename>
+	<path>D:\eao\Downloads\prj\food\fried_eggs\fried_eggs_13.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>960</width>
+		<height>540</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fried_eggs</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>337</xmin>
+			<ymin>132</ymin>
+			<xmax>720</xmax>
+			<ymax>354</ymax>
+		</bndbox>
+	</object>
+</annotation>

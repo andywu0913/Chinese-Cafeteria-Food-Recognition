@@ -1,0 +1,26 @@
+<annotation>
+	<folder>mung_bean_sprouts</folder>
+	<filename>mung_bean_sprouts_13.jpg</filename>
+	<path>D:\eao\Downloads\prj\food\mung_bean_sprouts\mung_bean_sprouts_13.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>mung_bean_sprouts</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>240</xmin>
+			<ymin>139</ymin>
+			<xmax>826</xmax>
+			<ymax>601</ymax>
+		</bndbox>
+	</object>
+</annotation>
