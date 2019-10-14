@@ -66,6 +66,7 @@ for filename in os.listdir(directory):
 		else:
 			print('Image file not found.')
 
+		print('Converting ' + filename + '.')
 		with open(filename, 'r') as file:
 			data = json.loads(dumps(bf.data(fromstring(file.read()))))['annotation']
 			obj_arr = data['object']
@@ -84,4 +85,3 @@ train_txt_file = sys.argv[3]
 
 with open(train_txt_file, 'a') as dest_file:
 	dest_file.write(content)
-
