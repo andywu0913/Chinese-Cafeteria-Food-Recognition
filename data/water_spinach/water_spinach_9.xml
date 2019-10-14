@@ -1,7 +1,7 @@
 <annotation>
-	<folder>kongxincai</folder>
-	<filename>kongxincai_15.jpg</filename>
-	<path>/Users/winnie/Desktop/Bento/kongxincai/kongxincai_15.jpg</path>
+	<folder>water_spinach</folder>
+	<filename>water_spinach_9.jpg</filename>
+	<path>/Users/winnie/Desktop/Bento/water_spinach/water_spinach_9.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,15 +12,15 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>kongxincai</name>
+		<name>water_spinach</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>23</xmin>
-			<ymin>59</ymin>
-			<xmax>71</xmax>
-			<ymax>172</ymax>
+			<xmin>65</xmin>
+			<ymin>44</ymin>
+			<xmax>178</xmax>
+			<ymax>153</ymax>
 		</bndbox>
 	</object>
 </annotation>

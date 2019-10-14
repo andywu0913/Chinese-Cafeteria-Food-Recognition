@@ -9,3 +9,4 @@ fried_dumplings
 fried_eggs
 hash_brown_triangles
 mung_bean_sprouts
+water_spinach

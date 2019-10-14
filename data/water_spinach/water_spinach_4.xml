@@ -1,7 +1,7 @@
 <annotation>
-	<folder>kongxincai</folder>
-	<filename>kongxincai_4.jpg</filename>
-	<path>/Users/winnie/Desktop/Bento/kongxincai/kongxincai_4.jpg</path>
+	<folder>water_spinach</folder>
+	<filename>water_spinach_4.jpg</filename>
+	<path>/Users/winnie/Desktop/Bento/water_spinach/water_spinach_4.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,7 +12,7 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>kongxincai</name>
+		<name>water_spinach</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
