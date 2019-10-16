@@ -1,7 +1,7 @@
 <annotation>
 	<folder>chinese_sausage</folder>
 	<filename>chinese_sausage_11.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\chinese_sausage\chinese_sausage_11.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/chinese_sausage/chinese_sausage_11.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -31,8 +31,8 @@
 		<bndbox>
 			<xmin>660</xmin>
 			<ymin>321</ymin>
-			<xmax>799</xmax>
-			<ymax>456</ymax>
+			<xmax>838</xmax>
+			<ymax>478</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -41,10 +41,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>829</xmin>
-			<ymin>203</ymin>
-			<xmax>922</xmax>
-			<ymax>330</ymax>
+			<xmin>825</xmin>
+			<ymin>175</ymin>
+			<xmax>934</xmax>
+			<ymax>325</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -53,10 +53,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>721</xmin>
-			<ymin>120</ymin>
-			<xmax>832</xmax>
-			<ymax>254</ymax>
+			<xmin>717</xmin>
+			<ymin>99</ymin>
+			<xmax>837</xmax>
+			<ymax>273</ymax>
 		</bndbox>
 	</object>
 </annotation>

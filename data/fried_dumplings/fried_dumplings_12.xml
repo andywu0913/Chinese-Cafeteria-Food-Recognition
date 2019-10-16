@@ -1,7 +1,7 @@
 <annotation>
 	<folder>fried_dumplings</folder>
 	<filename>fried_dumplings_12.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\fried_dumplings\fried_dumplings_12.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/fried_dumplings/fried_dumplings_12.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,94 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>87</xmin>
-			<ymin>543</ymin>
-			<xmax>220</xmax>
-			<ymax>904</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>232</xmin>
-			<ymin>568</ymin>
-			<xmax>376</xmax>
-			<ymax>907</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>319</xmin>
-			<ymin>632</ymin>
-			<xmax>418</xmax>
-			<ymax>946</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>401</xmin>
-			<ymin>675</ymin>
-			<xmax>511</xmax>
-			<ymax>1010</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>499</xmin>
-			<ymin>664</ymin>
-			<xmax>640</xmax>
-			<ymax>980</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>626</xmin>
-			<ymin>705</ymin>
-			<xmax>726</xmax>
-			<ymax>1032</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>691</xmin>
-			<ymin>721</ymin>
-			<xmax>797</xmax>
-			<ymax>1048</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>815</xmin>
-			<ymin>721</ymin>
-			<xmax>997</xmax>
-			<ymax>1040</ymax>
+			<xmin>92</xmin>
+			<ymin>548</ymin>
+			<xmax>1052</xmax>
+			<ymax>1057</ymax>
 		</bndbox>
 	</object>
 </annotation>

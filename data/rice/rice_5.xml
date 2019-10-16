@@ -1,7 +1,7 @@
 <annotation>
 	<folder>rice</folder>
 	<filename>rice_5.jpg</filename>
-	<path>/Users/winnie/Desktop/Bento/rice/rice_5.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/rice/rice_5.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -18,9 +18,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>211</xmin>
-			<ymin>445</ymin>
-			<xmax>416</xmax>
-			<ymax>909</ymax>
+			<ymin>436</ymin>
+			<xmax>462</xmax>
+			<ymax>940</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -29,10 +29,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>929</xmin>
-			<ymin>484</ymin>
-			<xmax>1023</xmax>
-			<ymax>921</ymax>
+			<xmin>901</xmin>
+			<ymin>429</ymin>
+			<xmax>1045</xmax>
+			<ymax>956</ymax>
 		</bndbox>
 	</object>
 </annotation>

@@ -1,7 +1,7 @@
 <annotation>
 	<folder>curry</folder>
 	<filename>curry_10.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\curry\curry_10.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/curry/curry_10.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -14,49 +14,13 @@
 	<object>
 		<name>curry</name>
 		<pose>Unspecified</pose>
-		<truncated>0</truncated>
+		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>423</xmin>
-			<ymin>65</ymin>
-			<xmax>585</xmax>
-			<ymax>246</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>curry</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>360</xmin>
-			<ymin>160</ymin>
-			<xmax>552</xmax>
-			<ymax>349</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>curry</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>258</xmin>
-			<ymin>228</ymin>
-			<xmax>485</xmax>
-			<ymax>383</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>curry</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>300</xmin>
-			<ymin>94</ymin>
-			<xmax>565</xmax>
-			<ymax>357</ymax>
+			<xmin>207</xmin>
+			<ymin>63</ymin>
+			<xmax>597</xmax>
+			<ymax>400</ymax>
 		</bndbox>
 	</object>
 </annotation>

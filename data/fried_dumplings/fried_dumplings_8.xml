@@ -1,7 +1,7 @@
 <annotation>
 	<folder>fried_dumplings</folder>
 	<filename>fried_dumplings_8.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\fried_dumplings\fried_dumplings_8.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/fried_dumplings/fried_dumplings_8.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,69 +17,9 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>828</xmin>
-			<ymin>389</ymin>
-			<xmax>958</xmax>
-			<ymax>571</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>772</xmin>
-			<ymin>422</ymin>
-			<xmax>911</xmax>
-			<ymax>602</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>689</xmin>
-			<ymin>451</ymin>
-			<xmax>812</xmax>
-			<ymax>647</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>597</xmin>
-			<ymin>493</ymin>
-			<xmax>702</xmax>
-			<ymax>704</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>469</xmin>
-			<ymin>502</ymin>
-			<xmax>602</xmax>
-			<ymax>700</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
 			<xmin>388</xmin>
-			<ymin>577</ymin>
-			<xmax>538</xmax>
+			<ymin>345</ymin>
+			<xmax>970</xmax>
 			<ymax>816</ymax>
 		</bndbox>
 	</object>

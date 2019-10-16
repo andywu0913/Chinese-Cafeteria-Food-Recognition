@@ -1,7 +1,7 @@
 <annotation>
 	<folder>water_spinach</folder>
 	<filename>water_spinach_14.jpg</filename>
-	<path>/Users/winnie/Desktop/Bento/water_spinach/water_spinach_14.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/water_spinach/water_spinach_14.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>74</xmin>
-			<ymin>86</ymin>
-			<xmax>182</xmax>
-			<ymax>152</ymax>
+			<xmin>53</xmin>
+			<ymin>74</ymin>
+			<xmax>209</xmax>
+			<ymax>163</ymax>
 		</bndbox>
 	</object>
 </annotation>

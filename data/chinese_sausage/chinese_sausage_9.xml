@@ -1,7 +1,7 @@
 <annotation>
 	<folder>chinese_sausage</folder>
 	<filename>chinese_sausage_9.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\chinese_sausage\chinese_sausage_9.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/chinese_sausage/chinese_sausage_9.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -29,22 +29,22 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>32</xmin>
-			<ymin>449</ymin>
-			<xmax>258</xmax>
-			<ymax>627</ymax>
+			<xmin>2</xmin>
+			<ymin>405</ymin>
+			<xmax>287</xmax>
+			<ymax>657</ymax>
 		</bndbox>
 	</object>
 	<object>
 		<name>chinese_sausage</name>
 		<pose>Unspecified</pose>
-		<truncated>0</truncated>
+		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1060</xmin>
-			<ymin>217</ymin>
-			<xmax>1299</xmax>
-			<ymax>409</ymax>
+			<xmin>1039</xmin>
+			<ymin>199</ymin>
+			<xmax>1300</xmax>
+			<ymax>426</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -54,20 +54,20 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>128</xmin>
-			<ymin>95</ymin>
-			<xmax>367</xmax>
+			<ymin>71</ymin>
+			<xmax>376</xmax>
 			<ymax>189</ymax>
 		</bndbox>
 	</object>
 	<object>
 		<name>chinese_sausage</name>
 		<pose>Unspecified</pose>
-		<truncated>0</truncated>
+		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>475</xmin>
-			<ymin>18</ymin>
-			<xmax>605</xmax>
+			<ymin>1</ymin>
+			<xmax>625</xmax>
 			<ymax>153</ymax>
 		</bndbox>
 	</object>
@@ -77,10 +77,22 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>875</xmin>
-			<ymin>70</ymin>
-			<xmax>1073</xmax>
-			<ymax>221</ymax>
+			<xmin>869</xmin>
+			<ymin>48</ymin>
+			<xmax>1084</xmax>
+			<ymax>214</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>chinese_sausage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>164</xmin>
+			<ymin>750</ymin>
+			<xmax>404</xmax>
+			<ymax>857</ymax>
 		</bndbox>
 	</object>
 </annotation>

@@ -1,7 +1,7 @@
 <annotation>
 	<folder>carrot_eggs</folder>
 	<filename>carrot_eggs_10.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\carrot_eggs\carrot_eggs_10.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/carrot_eggs/carrot_eggs_10.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -14,49 +14,13 @@
 	<object>
 		<name>carrot_eggs</name>
 		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>39</xmin>
-			<ymin>175</ymin>
-			<xmax>579</xmax>
-			<ymax>774</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>carrot_eggs</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>56</xmin>
-			<ymin>525</ymin>
-			<xmax>442</xmax>
-			<ymax>761</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>carrot_eggs</name>
-		<pose>Unspecified</pose>
 		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>390</xmin>
-			<ymin>218</ymin>
-			<xmax>600</xmax>
-			<ymax>396</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>carrot_eggs</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>312</xmin>
-			<ymin>492</ymin>
-			<xmax>503</xmax>
-			<ymax>656</ymax>
+			<xmin>1</xmin>
+			<ymin>137</ymin>
+			<xmax>586</xmax>
+			<ymax>804</ymax>
 		</bndbox>
 	</object>
 </annotation>

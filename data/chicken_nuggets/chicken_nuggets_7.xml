@@ -1,0 +1,26 @@
+<annotation>
+	<folder>chicken_nuggets</folder>
+	<filename>chicken_nuggets_7.jpg</filename>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/chicken_nuggets/chicken_nuggets_7.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>624</width>
+		<height>416</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>chicken_nuggets</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>41</xmin>
+			<ymin>42</ymin>
+			<xmax>624</xmax>
+			<ymax>387</ymax>
+		</bndbox>
+	</object>
+</annotation>

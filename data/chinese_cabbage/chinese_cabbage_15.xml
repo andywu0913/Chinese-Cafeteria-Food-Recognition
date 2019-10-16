@@ -1,7 +1,7 @@
 <annotation>
 	<folder>chinese_cabbage</folder>
 	<filename>chinese_cabbage_15.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\chinese_cabbage\chinese_cabbage_15.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/chinese_cabbage/chinese_cabbage_15.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,94 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>132</xmin>
-			<ymin>257</ymin>
-			<xmax>349</xmax>
-			<ymax>441</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_cabbage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>273</xmin>
-			<ymin>358</ymin>
-			<xmax>517</xmax>
-			<ymax>533</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_cabbage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>364</xmin>
-			<ymin>219</ymin>
-			<xmax>632</xmax>
-			<ymax>436</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_cabbage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>398</xmin>
-			<ymin>124</ymin>
-			<xmax>626</xmax>
-			<ymax>274</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_cabbage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>401</xmin>
-			<ymin>21</ymin>
-			<xmax>583</xmax>
-			<ymax>146</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_cabbage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>280</xmin>
-			<ymin>55</ymin>
-			<xmax>466</xmax>
-			<ymax>273</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_cabbage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>160</xmin>
-			<ymin>118</ymin>
-			<xmax>345</xmax>
-			<ymax>307</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_cabbage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>151</xmin>
-			<ymin>30</ymin>
-			<xmax>629</xmax>
-			<ymax>476</ymax>
+			<xmin>97</xmin>
+			<ymin>9</ymin>
+			<xmax>655</xmax>
+			<ymax>532</ymax>
 		</bndbox>
 	</object>
 </annotation>

@@ -1,7 +1,7 @@
 <annotation>
 	<folder>mung_bean_sprouts</folder>
 	<filename>mung_bean_sprouts_6.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\mung_bean_sprouts\mung_bean_sprouts_6.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/mung_bean_sprouts/mung_bean_sprouts_6.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>299</xmin>
-			<ymin>77</ymin>
-			<xmax>888</xmax>
-			<ymax>584</ymax>
+			<xmin>136</xmin>
+			<ymin>47</ymin>
+			<xmax>1013</xmax>
+			<ymax>658</ymax>
 		</bndbox>
 	</object>
 </annotation>

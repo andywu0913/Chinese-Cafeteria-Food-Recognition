@@ -1,7 +1,7 @@
 <annotation>
 	<folder>hash_brown_triangles</folder>
 	<filename>hash_brown_triangles_2.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\hash_brown_triangles\hash_brown_triangles_2.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/hash_brown_triangles/hash_brown_triangles_2.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,39 +12,39 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>fried_dumplings</name>
+		<name>triangle_hash_brown</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1525</xmin>
-			<ymin>335</ymin>
-			<xmax>2655</xmax>
-			<ymax>1276</ymax>
+			<xmin>1422</xmin>
+			<ymin>278</ymin>
+			<xmax>2816</xmax>
+			<ymax>1284</ymax>
 		</bndbox>
 	</object>
 	<object>
-		<name>fried_dumplings</name>
+		<name>triangle_hash_brown</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>296</xmin>
-			<ymin>985</ymin>
-			<xmax>1868</xmax>
-			<ymax>1722</ymax>
+			<xmin>183</xmin>
+			<ymin>987</ymin>
+			<xmax>1927</xmax>
+			<ymax>1855</ymax>
 		</bndbox>
 	</object>
 	<object>
-		<name>fried_dumplings</name>
+		<name>triangle_hash_brown</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>593</xmin>
 			<ymin>522</ymin>
-			<xmax>1634</xmax>
-			<ymax>1147</ymax>
+			<xmax>1626</xmax>
+			<ymax>1087</ymax>
 		</bndbox>
 	</object>
 </annotation>

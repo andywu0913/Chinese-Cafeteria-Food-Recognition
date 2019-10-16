@@ -1,7 +1,7 @@
 <annotation>
 	<folder>chinese_sausage</folder>
 	<filename>chinese_sausage_3.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\chinese_sausage\chinese_sausage_3.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/chinese_sausage/chinese_sausage_3.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -14,85 +14,13 @@
 	<object>
 		<name>chinese_sausage</name>
 		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>47</xmin>
-			<ymin>57</ymin>
-			<xmax>136</xmax>
-			<ymax>192</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_sausage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>9</xmin>
-			<ymin>70</ymin>
-			<xmax>68</xmax>
-			<ymax>177</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_sausage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>41</xmin>
-			<ymin>8</ymin>
-			<xmax>139</xmax>
-			<ymax>67</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_sausage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>117</xmin>
-			<ymin>15</ymin>
-			<xmax>234</xmax>
-			<ymax>97</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_sausage</name>
-		<pose>Unspecified</pose>
 		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>129</xmin>
-			<ymin>100</ymin>
-			<xmax>233</xmax>
+			<xmin>1</xmin>
+			<ymin>6</ymin>
+			<xmax>300</xmax>
 			<ymax>225</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_sausage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>197</xmin>
-			<ymin>94</ymin>
-			<xmax>289</xmax>
-			<ymax>189</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chinese_sausage</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>234</xmin>
-			<ymin>40</ymin>
-			<xmax>288</xmax>
-			<ymax>93</ymax>
 		</bndbox>
 	</object>
 </annotation>

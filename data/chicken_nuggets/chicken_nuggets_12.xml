@@ -1,7 +1,7 @@
 <annotation>
 	<folder>chicken_nuggets</folder>
 	<filename>chicken_nuggets_12.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\chicken_nuggets\chicken_nuggets_12.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/chicken_nuggets/chicken_nuggets_12.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -14,133 +14,13 @@
 	<object>
 		<name>chicken_nuggets</name>
 		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>172</xmin>
-			<ymin>454</ymin>
-			<xmax>417</xmax>
-			<ymax>621</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chicken_nuggets</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>253</xmin>
-			<ymin>603</ymin>
-			<xmax>474</xmax>
-			<ymax>842</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chicken_nuggets</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>498</xmin>
-			<ymin>593</ymin>
-			<xmax>701</xmax>
-			<ymax>856</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chicken_nuggets</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>738</xmin>
-			<ymin>629</ymin>
-			<xmax>913</xmax>
-			<ymax>791</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chicken_nuggets</name>
-		<pose>Unspecified</pose>
-		<truncated>1</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>758</xmin>
-			<ymin>778</ymin>
-			<xmax>956</xmax>
-			<ymax>866</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chicken_nuggets</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>429</xmin>
-			<ymin>427</ymin>
-			<xmax>703</xmax>
-			<ymax>559</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chicken_nuggets</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>164</xmin>
-			<ymin>302</ymin>
-			<xmax>392</xmax>
-			<ymax>466</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chicken_nuggets</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>12</xmin>
-			<ymin>493</ymin>
-			<xmax>244</xmax>
-			<ymax>722</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chicken_nuggets</name>
-		<pose>Unspecified</pose>
 		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>1</xmin>
-			<ymin>316</ymin>
-			<xmax>156</xmax>
-			<ymax>451</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chicken_nuggets</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>22</xmin>
-			<ymin>199</ymin>
-			<xmax>257</xmax>
-			<ymax>307</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>chicken_nuggets</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>662</xmin>
-			<ymin>564</ymin>
-			<xmax>791</xmax>
-			<ymax>716</ymax>
+			<ymin>172</ymin>
+			<xmax>933</xmax>
+			<ymax>866</ymax>
 		</bndbox>
 	</object>
 </annotation>

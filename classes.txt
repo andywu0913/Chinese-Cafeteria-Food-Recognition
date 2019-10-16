@@ -7,6 +7,6 @@ chinese_sausage
 curry
 fried_dumplings
 fried_eggs
-hash_brown_triangles
+triangle_hash_brown
 mung_bean_sprouts
 water_spinach

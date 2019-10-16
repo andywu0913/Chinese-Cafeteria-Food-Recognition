@@ -1,7 +1,7 @@
 <annotation>
 	<folder>mung_bean_sprouts</folder>
 	<filename>mung_bean_sprouts_1.jpg</filename>
-	<path>D:\eao\Downloads\prj\food\mung_bean_sprouts\mung_bean_sprouts_1.jpg</path>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/mung_bean_sprouts/mung_bean_sprouts_1.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,46 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>327</xmin>
-			<ymin>66</ymin>
-			<xmax>614</xmax>
-			<ymax>218</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>mung_bean_sprouts</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>124</xmin>
-			<ymin>77</ymin>
-			<xmax>339</xmax>
-			<ymax>220</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>mung_bean_sprouts</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>243</xmin>
-			<ymin>17</ymin>
-			<xmax>503</xmax>
-			<ymax>131</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>mung_bean_sprouts</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>163</xmin>
-			<ymin>37</ymin>
-			<xmax>562</xmax>
-			<ymax>218</ymax>
+			<xmin>53</xmin>
+			<ymin>4</ymin>
+			<xmax>642</xmax>
+			<ymax>260</ymax>
 		</bndbox>
 	</object>
 </annotation>
