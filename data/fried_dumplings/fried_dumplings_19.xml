@@ -1,0 +1,26 @@
+<annotation>
+	<folder>fried_dumplings</folder>
+	<filename>fried_dumplings_19.jpg</filename>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/fried_dumplings/fried_dumplings_19.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fried_dumplings</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>1446</ymin>
+			<xmax>697</xmax>
+			<ymax>2829</ymax>
+		</bndbox>
+	</object>
+</annotation>

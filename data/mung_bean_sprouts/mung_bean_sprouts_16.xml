@@ -1,0 +1,26 @@
+<annotation>
+	<folder>mung_bean_sprouts</folder>
+	<filename>mung_bean_sprouts_16.jpg</filename>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/mung_bean_sprouts/mung_bean_sprouts_16.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>960</width>
+		<height>1706</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>mung_bean_sprouts</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>523</xmin>
+			<ymin>556</ymin>
+			<xmax>800</xmax>
+			<ymax>906</ymax>
+		</bndbox>
+	</object>
+</annotation>

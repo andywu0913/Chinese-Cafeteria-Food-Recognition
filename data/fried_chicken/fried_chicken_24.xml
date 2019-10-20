@@ -1,0 +1,26 @@
+<annotation>
+	<folder>fried_chicken</folder>
+	<filename>fried_chicken_24.jpg</filename>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/fried_chicken/fried_chicken_24.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>3024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fried_chicken</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2228</xmin>
+			<ymin>845</ymin>
+			<xmax>3456</xmax>
+			<ymax>2366</ymax>
+		</bndbox>
+	</object>
+</annotation>

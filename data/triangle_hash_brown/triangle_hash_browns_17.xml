@@ -1,0 +1,26 @@
+<annotation>
+	<folder>triangle_hash_browns</folder>
+	<filename>triangle_hash_browns_17.jpg</filename>
+	<path>D:\eao\Downloads\prj\food\triangle_hash_browns\triangle_hash_browns_17.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>3024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>triangle_hash_browns</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2459</xmin>
+			<ymin>1766</ymin>
+			<xmax>3168</xmax>
+			<ymax>2060</ymax>
+		</bndbox>
+	</object>
+</annotation>
