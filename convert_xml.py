@@ -57,7 +57,12 @@ directory = sys.argv[2]
 
 content = ''
 
-for filename in os.listdir(directory):
+files = os.listdir(directory)
+print(files)
+# sort files by its serial number in the filename
+files.sort(key=lambda filename: int(filename[filename.rindex('_')+1:filename.rindex('.')]))
+
+for filename in files:
 	filename = os.path.join(directory, filename)
 	if filename.endswith('.xml'):
 		image_filename = check_image_file_exist(filename)
