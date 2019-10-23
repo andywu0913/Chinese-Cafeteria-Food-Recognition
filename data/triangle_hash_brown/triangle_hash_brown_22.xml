@@ -1,7 +1,7 @@
 <annotation>
 	<folder>triangle_hash_browns</folder>
-	<filename>triangle_hash_browns_1.jpg</filename>
-	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/10_22_19_food/triangle_hash_browns/triangle_hash_browns_1.jpg</path>
+	<filename>triangle_hash_browns_2.jpg</filename>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/10_22_19_food/triangle_hash_browns/triangle_hash_browns_2.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,15 +12,15 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>triangle_hash_browns</name>
+		<name>triangle_hash_brown</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>373</xmin>
-			<ymin>452</ymin>
-			<xmax>590</xmax>
-			<ymax>519</ymax>
+			<xmin>905</xmin>
+			<ymin>425</ymin>
+			<xmax>1094</xmax>
+			<ymax>486</ymax>
 		</bndbox>
 	</object>
 </annotation>
