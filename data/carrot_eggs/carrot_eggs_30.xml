@@ -1,0 +1,26 @@
+<annotation>
+	<folder>new</folder>
+	<filename>carrot_eggs_30.png</filename>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/new/carrot_eggs_30.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>906</width>
+		<height>1374</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>carrot_eggs</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>74</xmin>
+			<ymin>552</ymin>
+			<xmax>394</xmax>
+			<ymax>739</ymax>
+		</bndbox>
+	</object>
+</annotation>

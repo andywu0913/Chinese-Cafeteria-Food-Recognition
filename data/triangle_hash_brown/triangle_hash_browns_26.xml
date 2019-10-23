@@ -1,0 +1,26 @@
+<annotation>
+	<folder>new</folder>
+	<filename>triangle_hash_browns_26.png</filename>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/data/new/triangle_hash_browns_26.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>926</width>
+		<height>1508</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>hash_browns</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>499</xmin>
+			<ymin>595</ymin>
+			<xmax>809</xmax>
+			<ymax>1049</ymax>
+		</bndbox>
+	</object>
+</annotation>

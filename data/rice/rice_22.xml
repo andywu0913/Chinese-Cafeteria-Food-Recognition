@@ -1,0 +1,26 @@
+<annotation>
+	<folder>rice</folder>
+	<filename>rice_3.jpg</filename>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/10_22_19_food/rice/rice_3.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>rice</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>347</xmin>
+			<ymin>2146</ymin>
+			<xmax>2336</xmax>
+			<ymax>3208</ymax>
+		</bndbox>
+	</object>
+</annotation>

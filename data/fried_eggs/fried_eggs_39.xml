@@ -1,0 +1,26 @@
+<annotation>
+	<folder>fried_eggs</folder>
+	<filename>fried_eggs_18.jpg</filename>
+	<path>/Users/AndyWu/Documents/Docker/TensorFlow/chinese-cafeteria-food-recognition/10_22_19_food/fried_eggs/fried_eggs_18.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fried_eggs</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>768</xmin>
+			<ymin>837</ymin>
+			<xmax>2236</xmax>
+			<ymax>2041</ymax>
+		</bndbox>
+	</object>
+</annotation>

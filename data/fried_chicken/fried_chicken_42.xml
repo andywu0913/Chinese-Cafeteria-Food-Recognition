@@ -1,0 +1,26 @@
+<annotation>
+	<folder>fried_chicken</folder>
+	<filename>fried_chicken_18.jpg</filename>
+	<path>D:\eao\Documents\z_project\prj\10_22_19_food\fried_chicken\fried_chicken_18.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1108</width>
+		<height>1478</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fried_chicken</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>329</xmin>
+			<ymin>225</ymin>
+			<xmax>851</xmax>
+			<ymax>673</ymax>
+		</bndbox>
+	</object>
+</annotation>
