@@ -58,6 +58,10 @@ directory = sys.argv[2]
 content = ''
 
 files = os.listdir(directory)
+try:
+	files.remove('.DS_Store')
+except:
+	pass
 print(files)
 # sort files by its serial number in the filename
 files.sort(key=lambda filename: int(filename[filename.rindex('_')+1:filename.rindex('.')]))
