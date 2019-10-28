@@ -14,38 +14,43 @@ from yolo3.utils import get_random_data
 
 
 def _main():
-    annotation_path = 'train.txt'
-    log_dir = 'logs/000/'
-    classes_path = 'classes.txt'
-    anchors_path = 'model_data/yolo_anchors.txt'
-    class_names = get_classes(classes_path)
+    ANNOTATION_TRAIN_PATH = 'train2.txt'
+    ANNOTATION_VAL_PATH = 'train_val.txt'
+    LOG_DIR = 'logs/003/'
+    CLASSES_PATH = 'classes.txt'
+    ANCHORS_PATH = 'model_data/yolo_anchors.txt'
+    TINY_YOLO_WEIGHT_PATH = 'model_data/tiny_yolo_weights.h5'
+    YOLO_WEIGHT_PATH = 'model_data/yolo_weights.h5'
+
+    class_names = get_classes(CLASSES_PATH)
     num_classes = len(class_names)
-    anchors = get_anchors(anchors_path)
+    anchors = get_anchors(ANCHORS_PATH)
 
     input_shape = (416,416) # multiple of 32, hw
 
-    is_tiny_version = len(anchors)==6 # default setting
+    is_tiny_version = (len(anchors)==6) # default setting
     if is_tiny_version:
-        model = create_tiny_model(input_shape, anchors, num_classes,
-            freeze_body=2, weights_path='model_data/tiny_yolo_weights.h5')
+        model = create_tiny_model(input_shape, anchors, num_classes, freeze_body=2, weights_path=TINY_YOLO_WEIGHT_PATH)
     else:
-        model = create_model(input_shape, anchors, num_classes,
-            freeze_body=2, weights_path='model_data/yolov3.h5') # make sure you know what you freeze
+        model = create_model(input_shape, anchors, num_classes, freeze_body=2, weights_path=YOLO_WEIGHT_PATH)
 
-    logging = TensorBoard(log_dir=log_dir)
-    checkpoint = ModelCheckpoint(log_dir + 'ep{epoch:03d}-loss{loss:.3f}-val_loss{val_loss:.3f}.h5',
-        monitor='val_loss', save_weights_only=True, save_best_only=True, period=5)
-    reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=3, verbose=1)
-    early_stopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=10, verbose=1)
+    logging = TensorBoard(log_dir=LOG_DIR)
+    checkpoint = ModelCheckpoint(LOG_DIR + 'ep{epoch:03d}-loss{loss:.3f}-val_loss{val_loss:.3f}.h5',
+        monitor='val_loss', save_weights_only=True, save_best_only=False, period=50)
+    reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=25, verbose=1)
+    early_stopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=50, verbose=1)
 
-    val_split = 0.1
-    with open(annotation_path) as f:
-        lines = f.readlines()
-    np.random.seed(10101)
-    np.random.shuffle(lines)
+    with open(ANNOTATION_TRAIN_PATH) as f:
+        lines_train = f.readlines()
+    np.random.seed(99)
+    np.random.shuffle(lines_train)
     np.random.seed(None)
-    num_val = int(len(lines)*val_split)
-    num_train = len(lines) - num_val
+
+    with open(ANNOTATION_VAL_PATH) as f:
+        lines_val = f.readlines()
+
+    num_val = len(lines_val)
+    num_train = len(lines_train)
 
     # Train with frozen layers first, to get a stable loss.
     # Adjust num epochs to your dataset. This step is enough to obtain a not bad model.
@@ -54,35 +59,35 @@ def _main():
             # use custom yolo_loss Lambda layer.
             'yolo_loss': lambda y_true, y_pred: y_pred})
 
-        batch_size = 4
+        batch_size = 64
         print('Train on {} samples, val on {} samples, with batch size {}.'.format(num_train, num_val, batch_size))
-        model.fit_generator(data_generator_wrapper(lines[:num_train], batch_size, input_shape, anchors, num_classes),
+        model.fit_generator(data_generator_wrapper(lines_train, batch_size, input_shape, anchors, num_classes),
                 steps_per_epoch=max(1, num_train//batch_size),
-                validation_data=data_generator_wrapper(lines[num_train:], batch_size, input_shape, anchors, num_classes),
+                validation_data=data_generator_wrapper(lines_val, batch_size, input_shape, anchors, num_classes),
                 validation_steps=max(1, num_val//batch_size),
-                epochs=10,
+                epochs=200,
                 initial_epoch=0,
-                callbacks=[logging, checkpoint])
-        model.save_weights(log_dir + 'trained_weights_stage_1.h5')
+                callbacks=[logging, checkpoint, reduce_lr])
+        model.save_weights(LOG_DIR + 'trained_weights_stage_1.h5')
 
     # Unfreeze and continue training, to fine-tune.
     # Train longer if the result is not good.
-    if True:
+    if False:
         for i in range(len(model.layers)):
             model.layers[i].trainable = True
-        model.compile(optimizer=Adam(lr=1e-3), loss={'yolo_loss': lambda y_true, y_pred: y_pred}) # recompile to apply the change
+        model.compile(optimizer=Adam(lr=1e-5), loss={'yolo_loss': lambda y_true, y_pred: y_pred}) # recompile to apply the change
         print('Unfreeze all of the layers.')
 
-        batch_size = 4 # note that more GPU memory is required after unfreezing the body
+        batch_size = 16 # note that more GPU memory is required after unfreezing the body
         print('Train on {} samples, val on {} samples, with batch size {}.'.format(num_train, num_val, batch_size))
-        model.fit_generator(data_generator_wrapper(lines[:num_train], batch_size, input_shape, anchors, num_classes),
+        model.fit_generator(data_generator_wrapper(lines_train, batch_size, input_shape, anchors, num_classes),
             steps_per_epoch=max(1, num_train//batch_size),
-            validation_data=data_generator_wrapper(lines[num_train:], batch_size, input_shape, anchors, num_classes),
+            validation_data=data_generator_wrapper(lines_val, batch_size, input_shape, anchors, num_classes),
             validation_steps=max(1, num_val//batch_size),
-            epochs=5,
-            initial_epoch=0,
-            callbacks=[logging, checkpoint, reduce_lr, early_stopping]) #, early_stopping
-        model.save_weights(log_dir + 'trained_weights_final.h5')
+            epochs=500,
+            initial_epoch=200,
+            callbacks=[logging, checkpoint, reduce_lr, early_stopping])
+        model.save_weights(LOG_DIR + 'trained_weights_final.h5')
 
     # Further training if needed.
 
