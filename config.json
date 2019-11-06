@@ -1,0 +1,40 @@
+{
+    "model" : {
+        "min_input_size":       288,
+        "max_input_size":       448,
+        "anchors":              [55,65, 84,128, 134,71, 155,205, 163,115, 233,286, 250,135, 311,223, 355,349],
+        "labels":               ["carrot_eggs", "chicken_nuggets", "chinese_cabbage", "chinese_sausage", "curry", "fried_chicken", "fried_dumplings", "fried_eggs", "mung_bean_sprouts", "rice", "triangle_hash_brown", "water_spinach"]
+    },
+
+    "train": {
+        "train_image_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/data/train/imgs/",
+        "train_annot_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/data/train/anns/",
+        "cache_name":           "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/tmp/train.pkl",
+
+        "train_times":          1,
+        "batch_size":           8,
+        "learning_rate":        1e-4,
+        "nb_epochs":            200,
+        "warmup_epochs":        3,
+        "ignore_thresh":        0.5,
+        "gpus":                 "0",
+
+        "grid_scales":          [1,1,1],
+        "obj_scale":            5,
+        "noobj_scale":          1,
+        "xywh_scale":           1,
+        "class_scale":          1,
+
+        "tensorboard_dir":      "logs",
+        "saved_weights_name":   "food.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/data/valid/imgs/",
+        "valid_annot_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/data/valid/anns/",
+        "cache_name":           "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/tmp/val.pkl",
+
+        "valid_times":          1
+    }
+}
