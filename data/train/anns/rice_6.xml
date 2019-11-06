@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>rice_6.jpg</filename>
+	<path>data/train/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1000</width>
+		<height>750</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>rice</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>157</xmin>
+			<ymin>311</ymin>
+			<xmax>361</xmax>
+			<ymax>608</ymax>
+		</bndbox>
+	</object>
+</annotation>

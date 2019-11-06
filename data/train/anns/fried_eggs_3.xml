@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>fried_eggs_3.jpg</filename>
+	<path>data/train/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>600</width>
+		<height>400</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fried_eggs</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>79</xmin>
+			<ymin>33</ymin>
+			<xmax>420</xmax>
+			<ymax>349</ymax>
+		</bndbox>
+	</object>
+</annotation>

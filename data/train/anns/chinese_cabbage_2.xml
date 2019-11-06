@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>chinese_cabbage_2.jpg</filename>
+	<path>data/train/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>471</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>chinese_cabbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>21</xmin>
+			<ymin>47</ymin>
+			<xmax>606</xmax>
+			<ymax>456</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>chinese_sausage_26.jpg</filename>
+	<path>data/train/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>chinese_sausage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>790</xmin>
+			<ymin>863</ymin>
+			<xmax>2069</xmax>
+			<ymax>2545</ymax>
+		</bndbox>
+	</object>
+</annotation>

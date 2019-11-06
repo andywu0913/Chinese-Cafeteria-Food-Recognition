@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>triangle_hash_brown_9.jpg</filename>
+	<path>data/train/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>375</width>
+		<height>250</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>triangle_hash_brown</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>185</xmin>
+			<ymin>77</ymin>
+			<xmax>348</xmax>
+			<ymax>183</ymax>
+		</bndbox>
+	</object>
+</annotation>

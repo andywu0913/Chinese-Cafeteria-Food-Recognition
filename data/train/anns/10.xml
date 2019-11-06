@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>10.jpg</filename>
+	<path>data/train/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1772</width>
+		<height>2362</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fried_dumplings</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>225</xmin>
+			<ymin>265</ymin>
+			<xmax>1566</xmax>
+			<ymax>1948</ymax>
+		</bndbox>
+	</object>
+</annotation>

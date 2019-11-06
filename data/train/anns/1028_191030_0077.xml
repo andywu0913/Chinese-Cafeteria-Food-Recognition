@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>1028_191030_0077.jpg</filename>
+	<path>data/train/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>carrot_eggs</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>509</xmin>
+			<ymin>101</ymin>
+			<xmax>800</xmax>
+			<ymax>420</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>mung_bean_sprouts_6.jpg</filename>
+	<path>data/train/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1200</width>
+		<height>735</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>mung_bean_sprouts</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>136</xmin>
+			<ymin>47</ymin>
+			<xmax>1013</xmax>
+			<ymax>658</ymax>
+		</bndbox>
+	</object>
+</annotation>

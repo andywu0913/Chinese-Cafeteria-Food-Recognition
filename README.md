@@ -1,1 +1,0 @@
-# chinese-cafeteria-food-recognition

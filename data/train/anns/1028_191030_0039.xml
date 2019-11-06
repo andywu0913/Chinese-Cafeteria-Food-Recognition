@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>1028_191030_0039.jpg</filename>
+	<path>data/train/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1772</width>
+		<height>2362</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>curry</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>175</xmin>
+			<ymin>590</ymin>
+			<xmax>1554</xmax>
+			<ymax>1883</ymax>
+		</bndbox>
+	</object>
+</annotation>

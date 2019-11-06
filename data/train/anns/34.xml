@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>34.jpg</filename>
+	<path>data/train/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2362</width>
+		<height>1772</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>triangle_hash_brown</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>585</xmin>
+			<ymin>370</ymin>
+			<xmax>1883</xmax>
+			<ymax>1522</ymax>
+		</bndbox>
+	</object>
+</annotation>
