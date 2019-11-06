@@ -11,7 +11,7 @@
         "train_annot_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/data/train/anns/",
         "cache_name":           "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/tmp/train.pkl",
 
-        "train_times":          1,
+        "train_times":          3,
         "batch_size":           8,
         "learning_rate":        1e-4,
         "nb_epochs":            200,
@@ -25,8 +25,8 @@
         "xywh_scale":           1,
         "class_scale":          1,
 
-        "tensorboard_dir":      "logs",
-        "saved_weights_name":   "food.h5",
+        "tensorboard_dir":      "logs/",
+        "saved_weights_name":   "cafeteria.h5",
         "debug":                true
     },
 
