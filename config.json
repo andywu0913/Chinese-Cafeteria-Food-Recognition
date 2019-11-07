@@ -27,8 +27,7 @@
         "class_scale":          1,
 
         "tensorboard_dir":      "logs/",
-        "saved_weights_name":   "cafeteria.h5",
-        "debug":                true
+        "saved_weights_name":   "cafeteria.h5"
     },
 
     "valid": {
