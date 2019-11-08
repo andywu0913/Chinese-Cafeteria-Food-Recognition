@@ -30,7 +30,7 @@ def _main_(args):
     #   Load the model
     ###############################
     os.environ['CUDA_VISIBLE_DEVICES'] = config['train']['gpus']
-    infer_model = load_model(config['train']['saved_weights_name'])
+    infer_model = load_model(config['train']['saved_weights_name'], compile=False)
 
     ###############################
     #   Predict bounding boxes 
@@ -50,10 +50,7 @@ def _main_(args):
 
                 for i in range(len(images)):
                     draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh) 
-                    # calculate the price
-                    price = calculate_price(batch_boxes[i])
-                    # output total amount
-                    cv2.putText(img=images[i], text='Total: {0}.'.format(price), org=(200, 400), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * images[i].shape[0], color=(0, 255, 0), thickness=2)
+                    draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh) 
                     cv2.imshow('video with bboxes', images[i])
                 images = []
             if cv2.waitKey(1) == 27: 
@@ -89,7 +86,7 @@ def _main_(args):
                     for i in range(len(images)):
                         # draw bounding boxes on the image using labels
                         draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh)   
-
+                        draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh) 
                         # show the video with detection bounding boxes          
                         if show_window: cv2.imshow('video with bboxes', images[i])  
 
@@ -122,16 +119,38 @@ def _main_(args):
 
             # draw bounding boxes on the image using labels
             draw_boxes(image, boxes, config['model']['labels'], obj_thresh) 
-     
+            draw_receipt(image, boxes, config['model']['labels'], config['prices'], obj_thresh) 
             # write the image with bounding boxes to file
-            cv2.imwrite(output_path + image_path.split('/')[-1], np.uint8(image))         
+            cv2.imwrite(output_path + image_path.split('/')[-1], np.uint8(image))
 
-def calculate_price(boxes):
-    print(boxes)
-    print(len(boxes))
-    for i in range(len(boxes)):
-        pass
-    return 60
+def draw_receipt(image, boxes, labels, prices, obj_thresh):
+    x = 1400
+    y = 1400
+    dishes = set()
+    total = 0
+    for box in boxes:
+        for i in range(len(labels)):
+            if box.classes[i] > obj_thresh:
+                dishes.add(labels[i])
+
+    cv2.putText(img=image, text='======= Items =======', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+    if(len(dishes) > 0):
+        y += 40
+        for dish in dishes:
+            price = prices[dish]
+            total += price
+            cv2.putText(img=image, text='{0:<30}'.format(dish), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+            cv2.putText(img=image, text='{0:>30}'.format('$' + str(price)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+            y += 40
+    y += 40
+    print(image.shape)
+    # cv2.putText(img=image, text='==================', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+    cv2.putText(img=image, text='{0:<30}'.format('TOTAL'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=5)
+    cv2.putText(img=image, text='{0:>30}'.format('$' + str(total)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=5)
+    y += 40
+    cv2.putText(img=image, text='======= End ========', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+
+    return image
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser(description='Predict with a trained yolo model')

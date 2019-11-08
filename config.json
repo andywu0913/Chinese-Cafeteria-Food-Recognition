@@ -36,5 +36,20 @@
         "cache_name":           "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/tmp/val.pkl",
 
         "valid_times":          1
+    },
+
+    "prices": {
+        "carrot_eggs":          10,
+        "chicken_nuggets":      15,
+        "chinese_cabbage":      10,
+        "chinese_sausage":      10,
+        "curry":                10,
+        "fried_chicken":        30,
+        "fried_dumplings":      15,
+        "fried_eggs":           10,
+        "mung_bean_sprouts":    10,
+        "rice":                 10,
+        "triangle_hash_brown":  15,
+        "water_spinach":        10
     }
 }
