@@ -43,19 +43,20 @@ def _main_(args):
         images      = []
         while True:
             ret_val, image = video_reader.read()
-            if ret_val == True: images += [image]
+            if ret_val == True:
+                images += [image]
 
             if (len(images)==batch_size) or (ret_val==False and len(images)>0):
                 batch_boxes = get_yolo_boxes(infer_model, images, net_h, net_w, config['model']['anchors'], obj_thresh, nms_thresh)
 
                 for i in range(len(images)):
                     draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh) 
-                    draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh) 
+                    images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh) 
                     cv2.imshow('video with bboxes', images[i])
                 images = []
-            if cv2.waitKey(1) == 27: 
+            if cv2.waitKey(1) == 27:
                 break  # esc to quit
-        cv2.destroyAllWindows()        
+        cv2.destroyAllWindows()
     elif input_path[-4:] == '.mp4': # do detection on a video
         video_out = output_path + input_path.split('/')[-1]
         video_reader = cv2.VideoCapture(input_path)
@@ -64,10 +65,7 @@ def _main_(args):
         frame_h = int(video_reader.get(cv2.CAP_PROP_FRAME_HEIGHT))
         frame_w = int(video_reader.get(cv2.CAP_PROP_FRAME_WIDTH))
 
-        video_writer = cv2.VideoWriter(video_out,
-                               cv2.VideoWriter_fourcc(*'MPEG'),
-                               50.0, 
-                               (frame_w, frame_h))
+        video_writer = cv2.VideoWriter(video_out, cv2.VideoWriter_fourcc(*'MPEG'), 50.0, (frame_w, frame_h))
         # the main loop
         batch_size  = 1
         images      = []
@@ -86,18 +84,21 @@ def _main_(args):
                     for i in range(len(images)):
                         # draw bounding boxes on the image using labels
                         draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh)   
-                        draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh)
+                        images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh)
                         # show the video with detection bounding boxes          
-                        if show_window: cv2.imshow('video with bboxes', images[i])
+                        if show_window:
+                            cv2.imshow('video with bboxes', images[i])
 
                         # write result to the output video
                         video_writer.write(images[i]) 
                     images = []
-                if show_window and cv2.waitKey(1) == 27: break  # esc to quit
+                if show_window and cv2.waitKey(1) == 27:
+                    break  # esc to quit
 
-        if show_window: cv2.destroyAllWindows()
+        if show_window:
+            cv2.destroyAllWindows()
         video_reader.release()
-        video_writer.release()       
+        video_writer.release()
     else: # do detection on an image or a set of images
         image_paths = []
 
@@ -119,13 +120,15 @@ def _main_(args):
 
             # draw bounding boxes on the image using labels
             draw_boxes(image, boxes, config['model']['labels'], obj_thresh) 
-            draw_receipt(image, boxes, config['model']['labels'], config['prices'], obj_thresh) 
+            image = draw_receipt(image, boxes, config['model']['labels'], config['prices'], obj_thresh)
             # write the image with bounding boxes to file
             cv2.imwrite(output_path + image_path.split('/')[-1], np.uint8(image))
 
 def draw_receipt(image, boxes, labels, prices, obj_thresh):
-    x = 1400
-    y = 1400
+    row_height = int(35 * 1e-3 * image.shape[0])
+    x = image.shape[1] + 10
+    y = row_height
+
     dishes = set()
     total = 0
     for box in boxes:
@@ -133,24 +136,24 @@ def draw_receipt(image, boxes, labels, prices, obj_thresh):
             if box.classes[i] > obj_thresh:
                 dishes.add(labels[i])
 
-    cv2.putText(img=image, text='======= Items =======', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+    image_with_receipt = cv2.copyMakeBorder(image, 0, 0, 0, int(510 * 1e-3 * image.shape[0]), cv2.BORDER_CONSTANT, (0, 0, 0))
+    cv2.putText(img=image_with_receipt, text='======= Items =======', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
     if(len(dishes) > 0):
-        y += 40
+        y += row_height
         for dish in dishes:
             price = prices[dish]
             total += price
-            cv2.putText(img=image, text='{0:<30}'.format(dish), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
-            cv2.putText(img=image, text='{0:>30}'.format('$' + str(price)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
-            y += 40
-    y += 40
-    print(image.shape)
-    # cv2.putText(img=image, text='==================', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
-    cv2.putText(img=image, text='{0:<30}'.format('TOTAL'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=5)
-    cv2.putText(img=image, text='{0:>30}'.format('$' + str(total)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=5)
-    y += 40
-    cv2.putText(img=image, text='======= End ========', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+            cv2.putText(img=image_with_receipt, text='{0:<30}'.format(dish), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+            cv2.putText(img=image_with_receipt, text='{0:>30}'.format('$' + str(price)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+            y += row_height
+    y += row_height
+    
+    cv2.putText(img=image_with_receipt, text='{0:<30}'.format('TOTAL'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=5)
+    cv2.putText(img=image_with_receipt, text='{0:>30}'.format('$' + str(total)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=3)
+    y += row_height
+    cv2.putText(img=image_with_receipt, text='======== End =======', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
 
-    return image
+    return image_with_receipt
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser(description='Predict with a trained yolo model')
