@@ -11,8 +11,11 @@ def parse_voc_annotation(ann_dir, img_dir, cache_name, labels=[]):
     else:
         all_insts = []
         seen_labels = {}
+
+        anns = os.listdir(ann_dir)
+        print('{0} annotation files were found.'.format(len(anns)))
         
-        for ann in sorted(os.listdir(ann_dir)):
+        for ann in sorted(anns):
             img = {'object':[]}
 
             try:

@@ -7,9 +7,9 @@
     },
 
     "train": {
-        "train_image_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/data/train/imgs/",
-        "train_annot_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/data/train/anns/",
-        "cache_name":           "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/tmp/train.pkl",
+        "train_image_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/data/train/imgs/",
+        "train_annot_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/data/train/anns/",
+        "cache_name":           "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/tmp/train.pkl",
 
         "train_times":          3,
         "batch_size":           8,
@@ -31,9 +31,9 @@
     },
 
     "valid": {
-        "valid_image_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/data/valid/imgs/",
-        "valid_annot_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/data/valid/anns/",
-        "cache_name":           "/Users/AndyWu/Documents/Docker/TensorFlow/keras-yolo3-2/tmp/val.pkl",
+        "valid_image_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/data/valid/imgs/",
+        "valid_annot_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/data/valid/anns/",
+        "cache_name":           "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/tmp/val.pkl",
 
         "valid_times":          1
     },

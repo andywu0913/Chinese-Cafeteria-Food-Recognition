@@ -15,14 +15,14 @@ def _main_(args):
     input_path   = args.input
     output_path  = args.output
 
-    with open(config_path) as config_buffer:    
+    with open(config_path) as config_buffer:
         config = json.load(config_buffer)
 
     makedirs(output_path)
 
     ###############################
     #   Set some parameter
-    ###############################       
+    ###############################
     net_h, net_w = 416, 416 # a multiple of 32, the smaller the faster
     obj_thresh, nms_thresh = 0.5, 0.45
 
@@ -56,7 +56,7 @@ def _main_(args):
             if cv2.waitKey(1) == 27: 
                 break  # esc to quit
         cv2.destroyAllWindows()        
-    elif input_path[-4:] == '.mp4': # do detection on a video  
+    elif input_path[-4:] == '.mp4': # do detection on a video
         video_out = output_path + input_path.split('/')[-1]
         video_reader = cv2.VideoCapture(input_path)
 
@@ -65,7 +65,7 @@ def _main_(args):
         frame_w = int(video_reader.get(cv2.CAP_PROP_FRAME_WIDTH))
 
         video_writer = cv2.VideoWriter(video_out,
-                               cv2.VideoWriter_fourcc(*'MPEG'), 
+                               cv2.VideoWriter_fourcc(*'MPEG'),
                                50.0, 
                                (frame_w, frame_h))
         # the main loop
@@ -86,9 +86,9 @@ def _main_(args):
                     for i in range(len(images)):
                         # draw bounding boxes on the image using labels
                         draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh)   
-                        draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh) 
+                        draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh)
                         # show the video with detection bounding boxes          
-                        if show_window: cv2.imshow('video with bboxes', images[i])  
+                        if show_window: cv2.imshow('video with bboxes', images[i])
 
                         # write result to the output video
                         video_writer.write(images[i]) 
@@ -155,7 +155,7 @@ def draw_receipt(image, boxes, labels, prices, obj_thresh):
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser(description='Predict with a trained yolo model')
     argparser.add_argument('-c', '--conf', help='path to configuration file')
-    argparser.add_argument('-i', '--input', help='path to an image, a directory of images, a video, or webcam')    
+    argparser.add_argument('-i', '--input', help='path to an image, a directory of images, a video, or webcam')
     argparser.add_argument('-o', '--output', default='output/', help='path to output directory')   
     
     args = argparser.parse_args()
