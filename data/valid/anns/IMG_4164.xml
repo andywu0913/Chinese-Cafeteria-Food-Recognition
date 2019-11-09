@@ -1,50 +1,50 @@
 <annotation>
 	<folder>anns</folder>
-	<filename>IMG_9163.jpg</filename>
+	<filename>IMG_4164.jpg</filename>
 	<path>data/valid/imgs/</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>3024</width>
-		<height>4032</height>
+		<width>4032</width>
+		<height>3024</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>rice</name>
+		<name>mung_bean_sprouts</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>604</xmin>
-			<ymin>2039</ymin>
-			<xmax>2040</xmax>
-			<ymax>3239</ymax>
+			<xmin>955</xmin>
+			<ymin>1030</ymin>
+			<xmax>1922</xmax>
+			<ymax>2484</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>chinese_cabbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2234</xmin>
+			<ymin>1109</ymin>
+			<xmax>3309</xmax>
+			<ymax>2530</ymax>
 		</bndbox>
 	</object>
 	<object>
 		<name>water_spinach</name>
 		<pose>Unspecified</pose>
-		<truncated>0</truncated>
+		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1346</xmin>
-			<ymin>1176</ymin>
-			<xmax>2408</xmax>
-			<ymax>2029</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>fried_dumplings</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2035</xmin>
-			<ymin>1724</ymin>
-			<xmax>2982</xmax>
-			<ymax>3197</ymax>
+			<xmin>3601</xmin>
+			<ymin>1030</ymin>
+			<xmax>4032</xmax>
+			<ymax>2602</ymax>
 		</bndbox>
 	</object>
 </annotation>

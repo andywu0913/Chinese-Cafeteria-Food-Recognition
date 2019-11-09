@@ -1,0 +1,12 @@
+carrot_eggs
+chicken_nuggets
+chinese_cabbage
+chinese_sausage
+curry
+fried_chicken
+fried_dumplings
+fried_eggs
+mung_bean_sprouts
+rice
+triangle_hash_brown
+water_spinach

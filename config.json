@@ -3,7 +3,20 @@
         "min_input_size":       288,
         "max_input_size":       448,
         "anchors":              [55,65, 84,128, 134,71, 155,205, 163,115, 233,286, 250,135, 311,223, 355,349],
-        "labels":               ["carrot_eggs", "chicken_nuggets", "chinese_cabbage", "chinese_sausage", "curry", "fried_chicken", "fried_dumplings", "fried_eggs", "mung_bean_sprouts", "rice", "triangle_hash_brown", "water_spinach"]
+        "labels":               [
+                                    "carrot_eggs",
+                                    "chicken_nuggets",
+                                    "chinese_cabbage",
+                                    "chinese_sausage",
+                                    "curry",
+                                    "fried_chicken",
+                                    "fried_dumplings",
+                                    "fried_eggs",
+                                    "mung_bean_sprouts",
+                                    "rice",
+                                    "triangle_hash_brown",
+                                    "water_spinach"
+                                ]
     },
 
     "train": {
