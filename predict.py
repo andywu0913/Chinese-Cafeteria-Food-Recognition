@@ -52,7 +52,7 @@ def _main_(args):
                 for i in range(len(images)):
                     draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh) 
                     images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh) 
-                    cv2.imshow('video with bboxes', images[i])
+                    cv2.imshow('Chinese Cafeteria Food Recognition', images[i])
                 images = []
             if cv2.waitKey(1) == 27:
                 break  # esc to quit
@@ -87,7 +87,7 @@ def _main_(args):
                         images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh)
                         # show the video with detection bounding boxes          
                         if show_window:
-                            cv2.imshow('video with bboxes', images[i])
+                            cv2.imshow('Chinese Cafeteria Food Recognition', images[i])
 
                         # write result to the output video
                         video_writer.write(images[i]) 
