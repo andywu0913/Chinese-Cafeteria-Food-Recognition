@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>S__184819732.jpg</filename>
+	<path>data/train/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2362</width>
+		<height>1772</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>chicken_nuggets</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>967</xmin>
+			<ymin>863</ymin>
+			<xmax>1550</xmax>
+			<ymax>1407</ymax>
+		</bndbox>
+	</object>
+</annotation>
