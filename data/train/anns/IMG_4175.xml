@@ -1,7 +1,7 @@
 <annotation>
 	<folder>anns</folder>
-	<filename>IMG_4169.jpg</filename>
-	<path>data/valid/imgs/</path>
+	<filename>IMG_4175.jpg</filename>
+	<path>data/train/imgs/</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,39 +12,27 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>fried_eggs</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1705</xmin>
-			<ymin>101</ymin>
-			<xmax>3014</xmax>
-			<ymax>1468</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>water_spinach</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1134</xmin>
-			<ymin>559</ymin>
-			<xmax>1923</xmax>
-			<ymax>1430</ymax>
-		</bndbox>
-	</object>
-	<object>
 		<name>rice</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1997</xmin>
-			<ymin>1468</ymin>
-			<xmax>3105</xmax>
-			<ymax>2314</ymax>
+			<xmin>2022</xmin>
+			<ymin>663</ymin>
+			<xmax>2705</xmax>
+			<ymax>1684</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>fried_eggs</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>818</xmin>
+			<ymin>818</ymin>
+			<xmax>2026</xmax>
+			<ymax>2039</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -53,10 +41,22 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1551</xmin>
-			<ymin>1776</ymin>
-			<xmax>2359</xmax>
-			<ymax>2926</ymax>
+			<xmin>2405</xmin>
+			<ymin>1193</ymin>
+			<xmax>3389</xmax>
+			<ymax>2043</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>water_spinach</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1276</xmin>
+			<ymin>1676</ymin>
+			<xmax>2084</xmax>
+			<ymax>2581</ymax>
 		</bndbox>
 	</object>
 </annotation>

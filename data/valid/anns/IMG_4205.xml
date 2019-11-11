@@ -1,6 +1,6 @@
 <annotation>
 	<folder>anns</folder>
-	<filename>IMG_4163.jpg</filename>
+	<filename>IMG_4205.jpg</filename>
 	<path>data/valid/imgs/</path>
 	<source>
 		<database>Unknown</database>
@@ -12,27 +12,27 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>triangle_hash_brown</name>
+		<name>chicken_nuggets</name>
 		<pose>Unspecified</pose>
-		<truncated>0</truncated>
+		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>2118</xmin>
-			<ymin>422</ymin>
-			<xmax>3026</xmax>
-			<ymax>1193</ymax>
+			<xmin>1</xmin>
+			<ymin>472</ymin>
+			<xmax>2472</xmax>
+			<ymax>2833</ymax>
 		</bndbox>
 	</object>
 	<object>
-		<name>chicken_nuggets</name>
+		<name>rice</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1122</xmin>
-			<ymin>1947</ymin>
-			<xmax>2918</xmax>
-			<ymax>2818</ymax>
+			<xmin>1714</xmin>
+			<ymin>184</ymin>
+			<xmax>3480</xmax>
+			<ymax>2068</ymax>
 		</bndbox>
 	</object>
 </annotation>

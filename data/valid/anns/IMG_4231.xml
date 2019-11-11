@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>IMG_4231.jpg</filename>
+	<path>data/valid/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2362</width>
+		<height>1772</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>chinese_sausage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>650</xmin>
+			<ymin>427</ymin>
+			<xmax>1794</xmax>
+			<ymax>1353</ymax>
+		</bndbox>
+	</object>
+</annotation>

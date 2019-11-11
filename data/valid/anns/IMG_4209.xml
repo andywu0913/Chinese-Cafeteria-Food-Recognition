@@ -1,6 +1,6 @@
 <annotation>
 	<folder>anns</folder>
-	<filename>IMG_4171.jpg</filename>
+	<filename>IMG_4209.jpg</filename>
 	<path>data/valid/imgs/</path>
 	<source>
 		<database>Unknown</database>
@@ -12,39 +12,39 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>triangle_hash_brown</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1684</xmin>
-			<ymin>76</ymin>
-			<xmax>2618</xmax>
-			<ymax>1214</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>water_spinach</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2314</xmin>
-			<ymin>1593</ymin>
-			<xmax>3209</xmax>
-			<ymax>2484</ymax>
-		</bndbox>
-	</object>
-	<object>
 		<name>fried_eggs</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1239</xmin>
-			<ymin>1630</ymin>
-			<xmax>2705</xmax>
-			<ymax>2959</ymax>
+			<xmin>409</xmin>
+			<ymin>934</ymin>
+			<xmax>1893</xmax>
+			<ymax>2439</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>chicken_nuggets</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2222</xmin>
+			<ymin>430</ymin>
+			<xmax>3484</xmax>
+			<ymax>1634</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>chinese_cabbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1822</xmin>
+			<ymin>1576</ymin>
+			<xmax>3130</xmax>
+			<ymax>2739</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -53,10 +53,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1143</xmin>
-			<ymin>722</ymin>
-			<xmax>2247</xmax>
-			<ymax>1626</ymax>
+			<xmin>1847</xmin>
+			<ymin>243</ymin>
+			<xmax>2530</xmax>
+			<ymax>1493</ymax>
 		</bndbox>
 	</object>
 </annotation>
