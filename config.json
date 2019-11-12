@@ -20,11 +20,12 @@
     },
 
     "train": {
-        "train_image_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/data/train/imgs/",
-        "train_annot_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/data/train/anns/",
-        "cache_name":           "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/tmp/train.pkl",
+        "train_image_folder":   "data/train/imgs/",
+        "train_annot_folder":   "data/train/anns/",
+        "max_train_ints":       0,
+        "cache_name":           "tmp/train.pkl",
 
-        "train_times":          3,
+        "train_times":          5,
         "batch_size":           8,
         "learning_rate":        1e-4,
         "init_epoch":           0,
@@ -44,9 +45,9 @@
     },
 
     "valid": {
-        "valid_image_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/data/valid/imgs/",
-        "valid_annot_folder":   "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/data/valid/anns/",
-        "cache_name":           "/Users/AndyWu/Documents/Docker/TensorFlow/experiencor/tmp/val.pkl",
+        "valid_image_folder":   "data/valid/imgs/",
+        "valid_annot_folder":   "data/valid/anns/",
+        "cache_name":           "tmp/val.pkl",
 
         "valid_times":          1
     },
