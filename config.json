@@ -22,7 +22,7 @@
     "train": {
         "train_image_folder":   "data/train/imgs/",
         "train_annot_folder":   "data/train/anns/",
-        "max_train_ints":       0,
+        "max_train_ints":       -1,
         "cache_name":           "tmp/train.pkl",
 
         "train_times":          5,
