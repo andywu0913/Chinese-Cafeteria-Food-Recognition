@@ -65,5 +65,20 @@
         "rice":                 10,
         "triangle_hash_brown":  15,
         "water_spinach":        10
+    },
+
+    "nutrition_facts": {
+        "carrot_eggs":          {"serving_amount":  80, "amount_unit":   "g", "fat": 15, "carbohydrate": 210, "protein": 4},
+        "chicken_nuggets":      {"serving_amount":   1, "amount_unit": "pc.", "fat": 15, "carbohydrate": 210, "protein": 4},
+        "chinese_cabbage":      {"serving_amount":  80, "amount_unit":   "g", "fat": 15, "carbohydrate": 210, "protein": 4},
+        "chinese_sausage":      {"serving_amount":   1, "amount_unit": "pc.", "fat": 15, "carbohydrate": 210, "protein": 4},
+        "curry":                {"serving_amount": 170, "amount_unit":   "g", "fat": 15, "carbohydrate": 210, "protein": 4},
+        "fried_chicken":        {"serving_amount":   1, "amount_unit": "ea.", "fat": 15, "carbohydrate": 210, "protein": 4},
+        "fried_dumplings":      {"serving_amount":   1, "amount_unit": "ea.", "fat": 15, "carbohydrate": 210, "protein": 4},
+        "fried_eggs":           {"serving_amount":   1, "amount_unit": "ea.", "fat": 15, "carbohydrate": 210, "protein": 4},
+        "mung_bean_sprouts":    {"serving_amount":  80, "amount_unit":   "g", "fat": 15, "carbohydrate": 210, "protein": 4},
+        "rice":                 {"serving_amount": 260, "amount_unit":   "g", "fat": 15, "carbohydrate": 210, "protein": 4},
+        "triangle_hash_brown":  {"serving_amount":   1, "amount_unit": "ea.", "fat": 15, "carbohydrate": 210, "protein": 4},
+        "water_spinach":        {"serving_amount":  80, "amount_unit":   "g", "fat": 15, "carbohydrate": 210, "protein": 4}
     }
 }

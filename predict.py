@@ -51,7 +51,7 @@ def _main_(args):
 
                 for i in range(len(images)):
                     draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh) 
-                    images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh) 
+                    images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], config['nutrition_facts'], obj_thresh) 
                     cv2.imshow('Chinese Cafeteria Food Recognition', images[i])
                 images = []
             if cv2.waitKey(1) == 27:
@@ -84,7 +84,7 @@ def _main_(args):
                     for i in range(len(images)):
                         # draw bounding boxes on the image using labels
                         draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh)   
-                        images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], obj_thresh)
+                        images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], config['nutrition_facts'], obj_thresh)
                         # show the video with detection bounding boxes          
                         if show_window:
                             cv2.imshow('Chinese Cafeteria Food Recognition', images[i])
@@ -120,39 +120,70 @@ def _main_(args):
 
             # draw bounding boxes on the image using labels
             draw_boxes(image, boxes, config['model']['labels'], obj_thresh) 
-            image = draw_receipt(image, boxes, config['model']['labels'], config['prices'], obj_thresh)
+            image = draw_receipt(image, boxes, config['model']['labels'], config['prices'], config['nutrition_facts'], obj_thresh)
             # write the image with bounding boxes to file
             cv2.imwrite(output_path + image_path.split('/')[-1], np.uint8(image))
 
-def draw_receipt(image, boxes, labels, prices, obj_thresh):
+def draw_receipt(image, boxes, labels, prices, nutrition_facts, obj_thresh):
     row_height = int(35 * 1e-3 * image.shape[0])
     x = image.shape[1] + 10
     y = row_height
 
     dishes = set()
-    total = 0
     for box in boxes:
         for i in range(len(labels)):
             if box.classes[i] > obj_thresh:
                 dishes.add(labels[i])
 
     image_with_receipt = cv2.copyMakeBorder(image, 0, 0, 0, int(510 * 1e-3 * image.shape[0]), cv2.BORDER_CONSTANT, (0, 0, 0))
-    cv2.putText(img=image_with_receipt, text='======= Items =======', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+
+    # total expense
+    total_exp = 0
+    cv2.putText(img=image_with_receipt, text='====== Expense ======', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
     if(len(dishes) > 0):
         y += row_height
         for dish in dishes:
             price = prices[dish]
-            total += price
-            cv2.putText(img=image_with_receipt, text='{0:<30}'.format(dish), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
-            cv2.putText(img=image_with_receipt, text='{0:>30}'.format('$' + str(price)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+            total_exp += price
+            cv2.putText(img=image_with_receipt, text='{0}'.format(dish), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+            cv2.putText(img=image_with_receipt, text='{0:>29}'.format('$' + str(price)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
             y += row_height
     y += row_height
     
-    cv2.putText(img=image_with_receipt, text='{0:<30}'.format('TOTAL'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=5)
-    cv2.putText(img=image_with_receipt, text='{0:>30}'.format('$' + str(total)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=3)
+    cv2.putText(img=image_with_receipt, text='{0}'.format('TOTAL'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=5)
+    cv2.putText(img=image_with_receipt, text='{0:>29}'.format('$' + str(total_exp)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=3)
+    
+    # nutrition facts
+    total_fat = 0
+    total_carbs = 0
+    total_protein = 0
+    y += row_height * 2
+    cv2.putText(img=image_with_receipt, text='==== Nutrition Facts ====', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+    if(len(dishes) > 0):
+        # hints
+        y += row_height
+        cv2.putText(img=image_with_receipt, text='{0:>9} {1:>9} {2:>9}'.format('Fat', 'Carbs', 'Protein'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=3)
+        
+        y += row_height
+        for dish in dishes:
+            nutrition_fact = nutrition_facts[dish]
+            total_fat += nutrition_fact['fat']
+            total_carbs += nutrition_fact['carbohydrate']
+            total_protein += nutrition_fact['protein']
+            cv2.putText(img=image_with_receipt, text='{0}({1}{2})'.format(dish, str(nutrition_fact['serving_amount']) if nutrition_fact['amount_unit'] == 'g' else '', nutrition_fact['amount_unit']), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+            y += row_height
+            cv2.putText(img=image_with_receipt, text='{0:>9}{1:>9}{2:>9}'.format(str(nutrition_fact['fat']) + 'g', str(nutrition_fact['carbohydrate']) + 'g', str(nutrition_fact['protein']) + 'g'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+            y += row_height
     y += row_height
-    cv2.putText(img=image_with_receipt, text='======== End =======', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
-
+    
+    cv2.putText(img=image_with_receipt, text='{0}'.format('TOTAL'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=5)
+    y += row_height
+    cv2.putText(img=image_with_receipt, text='{0:>9}{1:>9}{2:>9}'.format(str(total_fat) + 'g', str(total_carbs) + 'g', str(total_protein) + 'g'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+    y += row_height
+    cv2.putText(img=image_with_receipt, text='{0}'.format(' Calories'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=3)
+    total_cal = 9 * total_fat + 4 * total_carbs + 4 * total_protein
+    cv2.putText(img=image_with_receipt, text='{0:>29}'.format(total_cal), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=3)
+    
     return image_with_receipt
 
 if __name__ == '__main__':
