@@ -1,0 +1,26 @@
+<annotation>
+	<folder>anns</folder>
+	<filename>img_142.jpg</filename>
+	<path>data/test/imgs/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2362</width>
+		<height>1772</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>curry</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>38</xmin>
+			<ymin>1</ymin>
+			<xmax>1953</xmax>
+			<ymax>1542</ymax>
+		</bndbox>
+	</object>
+</annotation>
