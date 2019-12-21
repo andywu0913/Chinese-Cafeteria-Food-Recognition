@@ -35,8 +35,8 @@ def _main_(args):
     ###############################
     #   Predict bounding boxes 
     ###############################
-    if 'webcam' in input_path: # do detection on the first webcam
-        video_reader = cv2.VideoCapture(0)
+    if 'webcam' in input_path[:6]: # do detection on the Xth webcam given the parameter 'webcamX'
+        video_reader = cv2.VideoCapture(int(input_path[6:]))
 
         # the main loop
         batch_size  = 1
@@ -51,7 +51,7 @@ def _main_(args):
 
                 for i in range(len(images)):
                     draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh) 
-                    images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], config['nutrition_facts'], obj_thresh) 
+                    images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['entrees'], obj_thresh) 
                     cv2.imshow('Chinese Cafeteria Food Recognition', images[i])
                 images = []
             if cv2.waitKey(1) == 27:
@@ -84,7 +84,7 @@ def _main_(args):
                     for i in range(len(images)):
                         # draw bounding boxes on the image using labels
                         draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh)   
-                        images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['prices'], config['nutrition_facts'], obj_thresh)
+                        images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['entrees'], obj_thresh)
                         # show the video with detection bounding boxes          
                         if show_window:
                             cv2.imshow('Chinese Cafeteria Food Recognition', images[i])
@@ -120,32 +120,33 @@ def _main_(args):
 
             # draw bounding boxes on the image using labels
             draw_boxes(image, boxes, config['model']['labels'], obj_thresh) 
-            image = draw_receipt(image, boxes, config['model']['labels'], config['prices'], config['nutrition_facts'], obj_thresh)
+            image = draw_receipt(image, boxes, config['model']['labels'], config['entrees'], obj_thresh)
             # write the image with bounding boxes to file
             cv2.imwrite(output_path + image_path.split('/')[-1], np.uint8(image))
 
-def draw_receipt(image, boxes, labels, prices, nutrition_facts, obj_thresh):
+def draw_receipt(image, boxes, labels, entrees, obj_thresh):
     row_height = int(35 * 1e-3 * image.shape[0])
     x = image.shape[1] + 10
     y = row_height
 
-    dishes = set()
+    # get detected_entrees
+    detected_entrees = set()
     for box in boxes:
         for i in range(len(labels)):
             if box.classes[i] > obj_thresh:
-                dishes.add(labels[i])
+                detected_entrees.add(labels[i])
 
     image_with_receipt = cv2.copyMakeBorder(image, 0, 0, 0, int(510 * 1e-3 * image.shape[0]), cv2.BORDER_CONSTANT, (0, 0, 0))
 
-    # total expense
+    # draw total expense
     total_exp = 0
     cv2.putText(img=image_with_receipt, text='====== Expense ======', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
-    if(len(dishes) > 0):
+    if(len(detected_entrees) > 0):
         y += row_height
-        for dish in dishes:
-            price = prices[dish]
+        for detected_entree in detected_entrees:
+            price = entrees[detected_entree]['price']
             total_exp += price
-            cv2.putText(img=image_with_receipt, text='{0}'.format(dish), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+            cv2.putText(img=image_with_receipt, text='{0}'.format(detected_entree), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
             cv2.putText(img=image_with_receipt, text='{0:>29}'.format('$' + str(price)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
             y += row_height
     y += row_height
@@ -153,24 +154,24 @@ def draw_receipt(image, boxes, labels, prices, nutrition_facts, obj_thresh):
     cv2.putText(img=image_with_receipt, text='{0}'.format('TOTAL'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=5)
     cv2.putText(img=image_with_receipt, text='{0:>29}'.format('$' + str(total_exp)), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=3)
     
-    # nutrition facts
+    # draw nutrition facts
     total_fat = 0
     total_carbs = 0
     total_protein = 0
     y += row_height * 2
     cv2.putText(img=image_with_receipt, text='==== Nutrition Facts ====', org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
-    if(len(dishes) > 0):
-        # hints
+    if(len(detected_entrees) > 0):
+        # header
         y += row_height
         cv2.putText(img=image_with_receipt, text='{0:>9} {1:>9} {2:>9}'.format('Fat', 'Carbs', 'Protein'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=3)
         
         y += row_height
-        for dish in dishes:
-            nutrition_fact = nutrition_facts[dish]
+        for detected_entree in detected_entrees:
+            nutrition_fact = entrees[detected_entree]
             total_fat += nutrition_fact['fat']
             total_carbs += nutrition_fact['carbohydrate']
             total_protein += nutrition_fact['protein']
-            cv2.putText(img=image_with_receipt, text='{0}({1}{2})'.format(dish, str(nutrition_fact['serving_amount']), nutrition_fact['amount_unit']), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
+            cv2.putText(img=image_with_receipt, text='{0}({1}{2})'.format(detected_entree, str(nutrition_fact['serving_amount']), nutrition_fact['amount_unit']), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
             y += row_height
             cv2.putText(img=image_with_receipt, text='{0:>9}{1:>9}{2:>9}'.format(str(nutrition_fact['fat']) + 'g', str(nutrition_fact['carbohydrate']) + 'g', str(nutrition_fact['protein']) + 'g'), org=(x, y), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1e-3 * image.shape[0], color=(0, 255, 0), thickness=2)
             y += row_height
