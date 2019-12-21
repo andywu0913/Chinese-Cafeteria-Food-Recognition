@@ -19,20 +19,20 @@ def _main_(args):
         config = json.loads(config_buffer.read())
 
     ###############################
-    #   Create the validation generator
+    #   Create the test generator
     ############################### 
-    valid_ints, labels = parse_voc_annotation(
-        config['valid']['valid_annot_folder'],
-        config['valid']['valid_image_folder'],
-        config['valid']['cache_name'],
+    test_ints, labels = parse_voc_annotation(
+        config['test']['test_annot_folder'],
+        config['test']['test_image_folder'],
+        config['test']['cache_name'],
         config['model']['labels']
     )
 
     labels = labels.keys() if len(config['model']['labels']) == 0 else config['model']['labels']
     labels = sorted(labels)
   
-    valid_generator = BatchGenerator(
-        instances           = valid_ints,
+    test_generator = BatchGenerator(
+        instances           = test_ints,
         anchors             = config['model']['anchors'],
         labels              = labels,
         downsample          = 32, # ratio between network input's size and network output's size, 32 for YOLOv3
@@ -53,7 +53,7 @@ def _main_(args):
     infer_model = load_model(args.weight if args.weight else config['train']['saved_weights_name'], compile=False)
 
     # compute mAP for all the classes
-    average_precisions = evaluate(infer_model, valid_generator)
+    average_precisions = evaluate(infer_model, test_generator)
 
     # print the score
     for label, average_precision in average_precisions.items():

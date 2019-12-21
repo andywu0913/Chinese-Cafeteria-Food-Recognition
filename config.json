@@ -52,6 +52,14 @@
         "valid_times":          1
     },
 
+    "test": {
+        "test_image_folder":   "data/test/imgs/",
+        "test_annot_folder":   "data/test/anns/",
+        "cache_name":           "tmp/test.pkl",
+
+        "test_times":          1
+    },
+
     "prices": {
         "carrot_eggs":          10,
         "chicken_nuggets":      15,
