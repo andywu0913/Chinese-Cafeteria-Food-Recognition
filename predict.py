@@ -25,6 +25,7 @@ def _main_(args):
     ###############################
     net_h, net_w = 416, 416 # a multiple of 32, the smaller the faster
     obj_thresh, nms_thresh = 0.5, 0.45
+    webcam_scale = 1.5
 
     ###############################
     #   Load the model
@@ -35,7 +36,7 @@ def _main_(args):
     ###############################
     #   Predict bounding boxes 
     ###############################
-    if 'webcam' in input_path[:6]: # do detection on the Xth webcam given the parameter 'webcamX'
+    if 'webcam' == input_path[:6]: # do detection on the Xth webcam given the parameter 'webcamX'
         video_reader = cv2.VideoCapture(int(input_path[6:]))
 
         # the main loop
@@ -51,6 +52,11 @@ def _main_(args):
 
                 for i in range(len(images)):
                     draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh) 
+                    
+                    if webcam_scale != 1
+                        img_shape = images[i].shape
+                        images[i] = cv2.resize(images[i], dsize=(int(img_shape[1] * webcam_scale), int(img_shape[0] * webcam_scale)), interpolation=cv2.INTER_NEAREST)
+
                     images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['entrees'], obj_thresh) 
                     cv2.imshow('Chinese Cafeteria Food Recognition', images[i])
                 images = []
