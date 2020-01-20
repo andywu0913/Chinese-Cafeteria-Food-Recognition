@@ -53,7 +53,7 @@ def _main_(args):
                 for i in range(len(images)):
                     draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh) 
                     
-                    if webcam_scale != 1
+                    if webcam_scale != 1:
                         img_shape = images[i].shape
                         images[i] = cv2.resize(images[i], dsize=(int(img_shape[1] * webcam_scale), int(img_shape[0] * webcam_scale)), interpolation=cv2.INTER_NEAREST)
 
