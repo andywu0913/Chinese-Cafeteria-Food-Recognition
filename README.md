@@ -8,6 +8,8 @@ A screenshot of the output predicted by the well-trained model.
 
 <img src="https://github.com/andywu0913/Chinese-Cafeteria-Food-Recognition/blob/experiencor/model_demo.jpg" width="550px">
 
+For more details on this project, please checkout our [project report](https://github.com/andywu0913/Chinese-Cafeteria-Food-Recognition/blob/experiencor/project_report.pdf).
+
 ## Tested Compatible Environment
 - Python 3.7
 - NumPy 1.16.0
