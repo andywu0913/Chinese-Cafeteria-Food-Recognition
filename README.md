@@ -1,20 +1,24 @@
 # Chinese Cafeteria Food Recognition
+One of the common running themes in the campus cafeteria is the hold up in foot traffic in queueing due to food checkout. We find out that the bottleneck is caused by the staff requiring extra time to look up the prices of those miscellaneous entrees and calculate the total due amount. Thus, we were inspired to build up an object detection model that recognizes entrees in the plate and calculates the total due amount automatically. With the model, the staff no longer need to perform mental calculations.
 
-One of the common running themes in campus cafeteria is the hold up in foot traffic in queueing due to food checkout. Therefore we were inspired to build up an object detection model that recognizes entrees in the plate to perform automatic price calculations.
+### Long Waiting Queue During Checkout
+<img src="asset/queue.jpg" width="550px">
 
-<img src="https://github.com/andywu0913/Chinese-Cafeteria-Food-Recognition/blob/experiencor/queue.jpg" width="550px">
+### Realtime Model Inferencing
+<img src="asset/model_demo.gif">
 
-A screenshot of the output predicted by the well-trained model.
+### Prices/Nutrition Facts Are Calculated and Displayed in the Right
+<img src="asset/model_demo.jpg" width="550px">
 
-<img src="https://github.com/andywu0913/Chinese-Cafeteria-Food-Recognition/blob/experiencor/model_demo.jpg" width="550px">
-
-For more details on this project, please checkout our [project report](https://github.com/andywu0913/Chinese-Cafeteria-Food-Recognition/blob/experiencor/project_report.pdf).
+For more details on this project, checkout our [project report](asset/project_report.pdf) or [conference paper](asset/conference_paper.pdf).
 
 ## Tested Compatible Environment
 - Python 3.7
 - NumPy 1.16.0
 - Tensorflow 1.13.2
 - Keras 2.2.5
+- OpenCV (not version dependent)
+- tqdm (not version dependent)
 
 ## Usage
 
@@ -34,12 +38,17 @@ python evaluate.py -c config.json
 
 #### Single Image
 ```
-python predict.py -c config.json -i /path/to/an/image [-o /path/to/output/folder/]
+python predict.py -c config.json -i /path/to/the/image [-o /path/to/the/output/folder/]
 ```
 
 #### A Folder of Images
 ```
-python predict.py -c config.json -i /path/to/image/folder [-o /path/to/output/folder/]
+python predict.py -c config.json -i /path/to/the/image/folder [-o /path/to/the/output/folder/]
+```
+
+#### Video File
+```
+python predict.py -c config.json -i /path/to/the/video [-o /path/to/the/output/folder/]
 ```
 
 #### Live Webcam
