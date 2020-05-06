@@ -7,7 +7,6 @@ import cv2
 from utils.utils import get_yolo_boxes, makedirs
 from utils.bbox import draw_boxes
 from keras.models import load_model
-from tqdm import tqdm
 import numpy as np
 
 def _main_(args):
@@ -36,7 +35,7 @@ def _main_(args):
     ###############################
     #   Predict bounding boxes 
     ###############################
-    if 'webcam' == input_path[:6]: # do detection on the Xth webcam given the parameter 'webcamX'
+    if input_path[:6] == 'webcam': # do detection on the Xth webcam given the parameter 'webcamX'
         video_reader = cv2.VideoCapture(int(input_path[6:]))
 
         # the main loop
@@ -63,48 +62,48 @@ def _main_(args):
             if cv2.waitKey(1) == 27:
                 break  # esc to quit
         cv2.destroyAllWindows()
-    elif input_path[-4:] == '.mp4': # do detection on a video
+    elif input_path[-4:] in ['.mp4', '.mov']: # do detection on a video
         video_out = output_path + input_path.split('/')[-1]
+        fps = 30.0
+        batch_size = 30
+
+        print(image_path)
         video_reader = cv2.VideoCapture(input_path)
+        video_writer = None
 
-        nb_frames = int(video_reader.get(cv2.CAP_PROP_FRAME_COUNT))
-        frame_h = int(video_reader.get(cv2.CAP_PROP_FRAME_HEIGHT))
-        frame_w = int(video_reader.get(cv2.CAP_PROP_FRAME_WIDTH))
-
-        video_writer = cv2.VideoWriter(video_out, cv2.VideoWriter_fourcc(*'MPEG'), 50.0, (frame_w, frame_h))
+        frame_counter = 0
+        processing = True
+        
         # the main loop
-        batch_size  = 1
-        images      = []
-        start_point = 0 #%
-        show_window = False
-        for i in tqdm(range(nb_frames)):
-            _, image = video_reader.read()
+        while processing:
+            images = []
 
-            if (float(i+1)/nb_frames) > start_point/100.:
+            for i in range(batch_size):
+                processing, image = video_reader.read()
+                if not processing:
+                    break
+                # image = cv2.resize(image, (round(426 * 2), round(640 * 2)), interpolation=cv2.INTER_AREA)
                 images += [image]
+                frame_counter += 1
 
-                if (i%batch_size == 0) or (i == (nb_frames-1) and len(images) > 0):
-                    # predict the bounding boxes
-                    batch_boxes = get_yolo_boxes(infer_model, images, net_h, net_w, config['model']['anchors'], obj_thresh, nms_thresh)
+            if len(images) > 0:
+                print('Processed video frames: {0}'.format(frame_counter))
+                batch_boxes = get_yolo_boxes(infer_model, images, net_h, net_w, config['model']['anchors'], obj_thresh, nms_thresh)
+                for i in range(len(images)):
+                    # draw bounding boxes on the image using labels
+                    draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh)   
+                    images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['entrees'], obj_thresh)
+                    # create videoWriter if it is the first time wrting result to the output video
+                    if not video_writer:
+                        height, width, _ = images[i].shape
+                        video_writer = cv2.VideoWriter(video_out, cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height))
+                    # write result to the output video
+                    video_writer.write(images[i]) 
 
-                    for i in range(len(images)):
-                        # draw bounding boxes on the image using labels
-                        draw_boxes(images[i], batch_boxes[i], config['model']['labels'], obj_thresh)   
-                        images[i] = draw_receipt(images[i], batch_boxes[i], config['model']['labels'], config['entrees'], obj_thresh)
-                        # show the video with detection bounding boxes          
-                        if show_window:
-                            cv2.imshow('Chinese Cafeteria Food Recognition', images[i])
-
-                        # write result to the output video
-                        video_writer.write(images[i]) 
-                    images = []
-                if show_window and cv2.waitKey(1) == 27:
-                    break  # esc to quit
-
-        if show_window:
-            cv2.destroyAllWindows()
-        video_reader.release()
-        video_writer.release()
+        if isinstance(video_reader, cv2.VideoCapture) and video_reader.isOpened():
+            video_reader.release()
+        if video_writer:
+            video_writer.release()
     else: # do detection on an image or a set of images
         image_paths = []
 
