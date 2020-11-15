@@ -10,7 +10,10 @@ One of the common running themes in the campus cafeteria is the hold up in foot 
 ### Prices/Nutrition Facts Are Calculated and Displayed in the Right
 <img src="asset/model_demo.jpg" width="550px">
 
-For more details on this project, checkout our [project report](asset/project_report.pdf) or [conference paper](asset/conference_paper.pdf).
+For more details on this project, checkout our [project report](asset/project_report.pdf) and [conference paper](asset/conference_paper.pdf).
+
+## The Model Structure
+We also saved the two keras model structures for references. The [training model](asset/training_model_graph.pdf) takes a 416x416x3 iamge as its input, and the three outputs of the model are the three different training losses produced from the three different scales according to the original paper. As for the [inferencing model](asset/infer_model_graph.pdf), it takes in a 416x416x3 iamge as well and produces the bounding boxes predictions at three different scales.
 
 ## Tested Compatible Environment
 - Python 3.7
